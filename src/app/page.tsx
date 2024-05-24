@@ -24,10 +24,10 @@ export default function Home() {
 
   const [toggleMode, setToggleMode] = useState(false);
   return (
-    <main className="min-h-screen background-image  bg-cover bg-no-repeat bg-center flex  flex-col px-8 xl:px-16  ">
-      <div className="flex justify-between my-4">
+    <main className="min-h-screen background-image  bg-cover bg-no-repeat bg-center flex  flex-col ">
+      <div className="flex justify-between py-4 bg-slate-800 items-center shadow-sm px-8 xl:px-16">
         <span
-          className={` text-2xl md:text-4xl font-mono font-extrabold  ${poller_one.className} text-zinc-200`}
+          className={` text-2xl md:text-4xl font-mono font-extrabold w-screen ${poller_one.className} text-zinc-200  `}
         >
           Trakk
         </span>
@@ -43,7 +43,7 @@ export default function Home() {
           )}
         </span>
       </div>
-      <div className="text-center justify-center -mt-[10rem]  sm:mt-0 items-center flex flex-col gap-6 flex-1 ">
+      <div className="text-center justify-center -mt-[10rem]  sm:mt-0 items-center flex flex-col gap-6 flex-1 px-8 xl:px-16">
         <p
           className={`xl:w-[60%] md:text-3xl  lg:font-semibold text-zinc-100 leading-10 animate__animated animate__backInDown ${poller_one.className}`}
         >
