@@ -1,4 +1,5 @@
-"use client";
+
+'use client'
 
 import Image from "next/image";
 import Head from "next/head";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import "animate.css";
 import { Poller_One } from "next/font/google";
+import MovingDot from "../components/ui/MovingDot";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 export const poller_one = Poller_One({
@@ -25,7 +27,7 @@ export default function Home() {
   const [toggleMode, setToggleMode] = useState(false);
   return (
     <main className="min-h-screen background-image  bg-cover bg-no-repeat bg-center flex  flex-col ">
-      <div className="flex justify-between py-4 bg-slate-800 items-center shadow-sm px-8 xl:px-16">
+      <div className="flex justify-between py-4 bg-slate-800 items-center shadow-sm px-8 xl:px-16  border-b-8 border-blue-600">
         <span
           className={` text-2xl md:text-4xl font-mono font-extrabold w-screen ${poller_one.className} text-zinc-200  `}
         >
@@ -45,7 +47,7 @@ export default function Home() {
       </div>
       <div className="text-center justify-center -mt-[10rem]  sm:mt-0 items-center flex flex-col gap-6 flex-1 px-8 xl:px-16">
         <p
-          className={`xl:w-[60%] md:text-3xl  lg:font-semibold text-zinc-100 leading-10 animate__animated animate__backInDown ${poller_one.className}`}
+          className={`xl:w-[60%] md:text-3xl  lg:font-semibold text-white z-50 leading-10 animate__animated animate__backInDown ${poller_one.className}`}
         >
           Effortlessly Track and Manage Your Team&apos;s Tasks with Real-Time
           Employee Scheduling Made Easy.
@@ -63,7 +65,8 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div>&copy; {new Date().getFullYear()}</div>
+      <div className=" px-8 xl:px-16">&copy; {new Date().getFullYear()}</div>
+   
     </main>
   );
 }

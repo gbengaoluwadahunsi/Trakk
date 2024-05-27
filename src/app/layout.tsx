@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Trakk",
   description: "Employee Tracking and Task Scheduling App",
+ 
 };
 
 export default function RootLayout({
