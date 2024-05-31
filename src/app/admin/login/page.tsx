@@ -34,13 +34,13 @@ const AdminLoginPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="bg-slate-800 p-12 rounded shadow-md w-full max-w-md">
+    <div className="flex items-center justify-center h-screen bg-cover bg-no-repeat bg-admin1">
+      <div className="bg-slate-800 p-12 rounded shadow-md w-[32rem] h-[36rem] ">
       <span className={` text-2xl md:text-4xl flex justify-center items-center py-8 font-mono font-extrabold  ${poller_one.className} text-zinc-200`}>
           Trakk
         </span >
         <h1 className=" text-zinc-100 text-2xl font-bold">Admin Login</h1>
-        <form onSubmit={handleSubmit(onSubmit)} className="py-4 space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)} className="py-4 space-y-12">
           <input
             {...register('email', { required: true })}
             type="email"

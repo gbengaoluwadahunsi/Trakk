@@ -26,7 +26,7 @@ export default function Home() {
 
   const [toggleMode, setToggleMode] = useState(false);
   return (
-    <main className="min-h-screen background-image  bg-cover bg-no-repeat bg-center flex  flex-col ">
+    <main className="min-h-screen  bg-landing-page  bg-cover bg-no-repeat bg-center flex  flex-col ">
       <div className="flex justify-between py-4 bg-slate-800 items-center shadow-sm px-8 xl:px-16  border-b-8 border-blue-600">
         <span
           className={` text-2xl md:text-4xl font-mono font-extrabold w-screen ${poller_one.className} text-zinc-200  `}

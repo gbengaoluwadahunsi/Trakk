@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Poller_One } from "next/font/google";
+import Image from 'next/image';
+import loginImage from "../../../../public/friends.png";
 
 export const poller_one = Poller_One({
   subsets: ["latin"],
@@ -34,15 +36,27 @@ const EmployeeSignupPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="bg-slate-800 p-12 rounded shadow-md w-full max-w-md">
+    <section className=" md:flex flex-row h-screen">
+     <div className="basis-1/2 relative">
+      <Image
+        src={loginImage}
+        alt="Login page image"
+        layout="fill" 
+        objectFit="cover" 
+        placeholder="blur" 
+        className=" hidden lg:block absolute" // Ensure image takes the correct position
+       
+      />
+      </div>
+      <div className=" basis-1/2 flex items-center justify-center bg-slate-100  ">
+      <div className="bg-slate-800 p-12 rounded shadow-md w-[32rem] h-[40rem]">
         <span
           className={` text-2xl md:text-4xl flex justify-center items-center py-8 font-mono font-extrabold  ${poller_one.className} text-zinc-200`}
         >
           Trakk
         </span>
         <h1 className=" text-zinc-100 text-2xl font-bold">Employee Sign Up</h1>
-        <form onSubmit={handleSubmit(onSubmit)} className=" py-4 space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)} className=" py-4 space-y-12">
           <input
             {...register("name", { required: true })}
             type="text"
@@ -90,6 +104,7 @@ const EmployeeSignupPage = () => {
         </form>
       </div>
     </div>
+    </section>
   );
 };
 
