@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 import { Poller_One } from "next/font/google";
 import Image from "next/image";
 import loginImage from "../../../../public/login.jpg";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const poller_one = Poller_One({
   subsets: ["latin"],
@@ -17,30 +17,41 @@ export const poller_one = Poller_One({
 });
 
 const LoginPage = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const [companyName, setCompanyName] = useState("");
   const router = useRouter();
   const notify = () => toast.success("Login Successful!");
+  const notifyError = (message : string) => toast.error(message);
 
-  const onSubmit = async (data: object) => {
+  const verifyCompany = async (companyName:string) => {
     try {
-      // Dummy response for example purposes, replace with actual API call
-      // const response = await axios.post("/api/employee-login", {
-      //   ...data,
-      //   companyName,
-      // });
-      // localStorage.setItem("token", response.data.token);
+      const response = await axios.post("/api/verify-staff-company", { companyName });
+      return response.data.valid;
+      
+    } catch (error) {
+      console.log("Error verifying company.");
+      return false;
+    }
+  };
 
+
+  const onSubmit = async (data:any) => {
+    const isCompanyRegistered = await verifyCompany(data.companyName);
+    console.log(isCompanyRegistered);
+    if (!isCompanyRegistered) {
+      notifyError("Company not registered.");
+      return;
+    }
+
+    try {
+      // Mock success response
+      localStorage.setItem("token", "mock-token");
       notify();
       setTimeout(() => {
         router.push("/employee/dashboard");
-      }, 2000);
+      }, 1000);
     } catch (error) {
-      toast.error("Login failed, please try again.");
+      notifyError("Login failed, please try again.");
       console.error("Login failed:", error);
     }
   };
@@ -62,11 +73,11 @@ const LoginPage = () => {
           layout="fill"
           objectFit="cover"
           placeholder="blur"
-          className="hidden lg:block absolute" // Ensure image takes the correct position
+          className="hidden lg:block absolute"
         />
       </div>
       <div className="basis-1/2 flex flex-col items-center justify-center bg-slate-100">
-        <div className="bg-slate-800 p-12 rounded shadow-md w-[32rem] h-[36rem]">
+        <div className="bg-slate-800 px-12  py-6rounded shadow-md w-[32rem] h-[40rem]">
           <span
             className={`text-2xl md:text-4xl flex justify-center items-center py-8 font-mono font-extrabold ${poller_one.className} text-zinc-200`}
           >
@@ -80,18 +91,23 @@ const LoginPage = () => {
               placeholder="Email"
               className="w-full p-2 border border-gray-300 rounded"
             />
-            {errors.email && (
-              <span className="text-red-500">Email is required</span>
-            )}
+            {errors.email && <span className="text-red-500">Email is required</span>}
             <input
               {...register("password", { required: true })}
               type="password"
               placeholder="Password"
               className="w-full p-2 border border-gray-300 rounded"
             />
-            {errors.password && (
-              <span className="text-red-500">Password is required</span>
-            )}
+            {errors.password && <span className="text-red-500">Password is required</span>}
+            <input
+              {...register("companyName", { required: true })}
+              type="text"
+              placeholder="Company Name"
+              value={companyName}
+              onChange={(e) => setCompanyName(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+            {errors.companyName && <span className="text-red-500">Company Name is required</span>}
             <button
               type="submit"
               className="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
