@@ -7,7 +7,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Poller_One } from "next/font/google";
 import Image from "next/image";
-import loginImage from "../../../../public/friends.png";
+import loginImage from "../../../../public/signUp.jpg";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

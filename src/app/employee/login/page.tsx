@@ -29,7 +29,7 @@ const LoginPage = () => {
       return response.data.valid;
       
     } catch (error) {
-      console.log("Error verifying company.");
+      console.log("Error verifying company.", error);
       return false;
     }
   };

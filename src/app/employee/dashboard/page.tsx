@@ -43,6 +43,9 @@ const EmployeeDashboard: React.FC = () => {
         console.error('Error fetching location:', err);
       }
     );
+    return () => {
+      setLocation({ latitude: null, longitude: null });
+    }
   }, []);
 
   const handleClockIn = () => {
@@ -124,7 +127,7 @@ const EmployeeDashboard: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col h-screen p-6 bg-gradient-to-br from-slate-300 to-blue-600">
+    <div className="flex flex-col h-screen p-6 bg-gradient-to-br from-blue-600 to-blue-800">
       <h1 className="text-4xl font-bold mb-8 text-center text-slate-900">Welcome back, James Bond</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
