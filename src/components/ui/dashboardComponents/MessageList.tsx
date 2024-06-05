@@ -1,7 +1,18 @@
 // src/components/MessageList.tsx
 import React from 'react';
 
-const MessageList = ({ messages }) => {
+interface Message {
+  sender: string;
+  content: string;
+  date : string
+}
+
+
+interface MessageListProps {
+ messages: Message[];
+}
+
+const MessageList: React.FC<MessageListProps> = ({ messages }) => {
   return (
     <div>
       <h2 className="text-xl text-blue-800 font-bold mb-2">Messages</h2>

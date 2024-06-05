@@ -54,7 +54,7 @@ const config: Config = {
       },
       backgroundImage: {
         'custom-pattern': "url('/login.jpg')",
-        "landing-page": "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/bg2.jpg')",
+      
         "admin1": " url('/admin1.jpg')",
         "admin2": "url('/admin2.jpg')",
       },

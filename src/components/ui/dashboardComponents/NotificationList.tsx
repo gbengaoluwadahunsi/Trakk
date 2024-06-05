@@ -1,7 +1,17 @@
 // src/components/NotificationList.tsx
 import React from 'react';
 
-const NotificationList = ({ notifications }) => {
+
+interface Notification {
+  message: string;
+  date : string;
+}
+
+interface  NotificationProps{
+  notifications : Notification[]
+}
+
+const NotificationList :React.FC<NotificationProps> = ({ notifications }) => {
   return (
     <div>
       <h2 className="text-xl text-blue-800 font-bold mb-2">Notifications</h2>

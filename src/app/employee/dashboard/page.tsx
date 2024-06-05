@@ -144,7 +144,7 @@ const EmployeeDashboard: React.FC = () => {
           <TaskList tasks={placeholderTasks} />
         </div>
 
-        {/* Attendance Record */}
+        Attendance Record
         <div className="col-span-1 mb-8 p-6 bg-white rounded-lg shadow-lg">
           <AttendanceRecord attendance={placeholderAttendance} />
         </div>

@@ -1,7 +1,17 @@
 // src/components/AttendanceRecord.tsx
 import React from 'react';
 
-const AttendanceRecord = ({ attendance }) => {
+interface Attendance{
+  status: string;
+  date: string;
+}
+
+
+interface CompanyAnnouncementsProps {
+  attendance: Attendance[];
+}
+
+const AttendanceRecord: React.FC<CompanyAnnouncementsProps> = ({attendance }) => {
   return (
     <div>
       <h2 className="text-xl text-blue-800 font-bold mb-2">Attendance Record</h2>

@@ -4,7 +4,7 @@ const TaskTable = () => {
       <h3 className="text-xl font-bold mb-4">Task Management</h3>
       <table className="w-full">
         <thead>
-          <tr>
+        <tr className=" flex justify-between gap-4">
             <th>Task</th>
             <th>Assignee</th>
             <th>Status</th>
@@ -12,11 +12,11 @@ const TaskTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
+        <tr className=" flex justify-between gap-4 ">
             <td>Fix bugs</td>
             <td>John Doe</td>
-            <td>Pending</td>
-            <td>
+            <td >Pending</td>
+            <td className="">
               <button className="bg-blue-500 text-white px-2 py-1 rounded">Edit</button>
               <button className="bg-red-500 text-white px-2 py-1 rounded ml-2">Delete</button>
             </td>

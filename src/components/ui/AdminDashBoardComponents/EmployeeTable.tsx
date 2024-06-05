@@ -4,7 +4,7 @@ const EmployeeTable = () => {
       <h3 className="text-xl font-bold mb-4">Employee Management</h3>
       <table className="w-full">
         <thead>
-          <tr>
+          <tr className=" flex justify-between gap-4">
             <th>Name</th>
             <th>Email</th>
             <th>Position</th>
@@ -12,7 +12,7 @@ const EmployeeTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
+        <tr className=" flex justify-between gap-4">
             <td>John Doe</td>
             <td>john@example.com</td>
             <td>Developer</td>

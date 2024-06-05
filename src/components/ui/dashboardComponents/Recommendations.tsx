@@ -1,7 +1,17 @@
 // src/components/Recommendations.tsx
 import React from 'react';
 
-const Recommendations = ({ recommendations }) => {
+interface Recommendation{
+  title : string;
+  description: string;
+  link: string;
+}
+
+interface RecommendationProps{
+  recommendations : Recommendation[];
+}
+
+const Recommendations: React.FC<RecommendationProps> = ({ recommendations }) => {
   return (
     <div>
       <h2 className="text-xl text-blue-800 font-bold mb-2">Recommended for You</h2>

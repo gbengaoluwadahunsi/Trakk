@@ -1,21 +1,18 @@
-import { Poller_One } from "next/font/google";
+import { useRouter } from "next/navigation";
 
-export const poller_one = Poller_One({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-});
+
 
 
 const AdminHeader = () => {
+
+  const router = useRouter();
+  const handleLogOut = () => {
+    router.push("/")
+  }
     return (
-      <header className="bg-blue-700 text-white p-4 flex fixed w-full justify-between items-center">
-       <span
-          className={` text-2xl md:text-4xl font-mono font-extrabold w-screen ${poller_one.className} text-zinc-200  `}
-        >
-          Trakk
-        </span>
-        <button className="bg-red-500 px-4 py-2 rounded">Logout</button>
+      <header className=" text-white p-4 flex justify-between fixed w-[100%] z-50 bg-[#0000ff] rounded-t-lg  items-center">
+        <h1 className="text-xl font-bold">Dashboard</h1>
+        <button onClick={handleLogOut} className="bg-red-500 px-4 py-2 rounded">Logout</button>
       </header>
     );
   };

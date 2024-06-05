@@ -1,7 +1,18 @@
 // src/components/CompanyAnnouncements.tsx
 import React from 'react';
 
-const CompanyAnnouncements = ({ announcements }) => {
+// Define the type for the announcements object
+interface Announcement {
+  message: string;
+  date: string;
+}
+
+
+interface CompanyAnnouncementsProps {
+  announcements: Announcement[];
+}
+
+const CompanyAnnouncements: React.FC<CompanyAnnouncementsProps> = ({ announcements }) => {
   return (
     <div>
       <h2 className="text-xl text-blue-800 font-bold mb-2">Company Announcements</h2>
