@@ -16,10 +16,10 @@ interface AdminSidebarProps {
 }
 
 const AdminSidebar: FC<AdminSidebarProps> = ({ setSection }) => {
-  const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
+  const [focusedIndex, setFocusedIndex] = useState<number | null>(0);
 
   return (
-    <div className="w-64 bg-white fixed shadow-lg shadow-slate-800 text-white h-screen pt-20 px-4">
+    <div className="w-64 bg-[#dcdeff] fixed  text-white h-screen  p-4">
       <Image
         src={logo}
         alt="Login page image"
@@ -28,7 +28,7 @@ const AdminSidebar: FC<AdminSidebarProps> = ({ setSection }) => {
         height={50}
       />
       <nav className="sidebar">
-        <ul className="space-y-8 mt-8 text-xl">
+        <ul className="space-y-8 mt-8 text-lg">
           {["overview", "employees", "tasks", "company", "reports", "notifications", "settings"].map((item, index) => (
             <li
               key={item}
@@ -37,7 +37,7 @@ const AdminSidebar: FC<AdminSidebarProps> = ({ setSection }) => {
                 setFocusedIndex(index);
               }}
               className={`cursor-pointer my-2 ${
-                focusedIndex === index ? "bg-[#0000ff] text-white" : ""
+                focusedIndex === index ? "bg-[#0006df] text-white" : ""
               } text-slate-800 rounded-md w-[10rem] p-2 hover:w-[11rem]`}
             >
               {item === "overview" && (

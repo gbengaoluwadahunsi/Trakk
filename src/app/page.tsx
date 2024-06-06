@@ -43,7 +43,7 @@ export default function Home() {
           {toggleMode ? (
             <FaSun className="text-yellow-400" />
           ) : (
-            <FaMoon className="text-amber-100" />
+            <FaMoon className="text-amber-50" />
           )}
         </span>
       </div>
@@ -58,7 +58,7 @@ export default function Home() {
           {" "}
           <button
             onClick={handleGetStarted}
-            className=" cursor-pointer text-white px-4 md:text-2xl py-2 rounded hover:bg-blue-600 bg-[#0000ff]"
+            className=" cursor-pointer text-white px-4 md:text-2xl py-2 rounded hover:bg-blue-600 bg-[#6d81ff]"
           >
             Get Started
           </button>

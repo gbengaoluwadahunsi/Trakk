@@ -24,16 +24,17 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="">
-      <AdminHeader />
-        
-      <div className="flex ">
+    <div className=" flex flex-col">
       <AdminSidebar setSection={setSection} />
-      <div className="flex-1 ml-[16rem]  bg-[#F5F5F5] rounded-lg">
-      
         
+      
+      
+   
+      <div className=" ml-[16rem]  ">
+      
+           <AdminHeader />
 
-        <div className=" mt-20 p-4 h-screen">
+        <div className=" mt-2 p-4 h-screen">
           {section === "overview" && <OverviewCard />}
           {section === "employees" && <EmployeeTable />}
           {section === "tasks" && <TaskTable />}
@@ -42,7 +43,7 @@ const Dashboard = () => {
           {section === "notifications" && <Notifications />}
           {section === "settings" && <Settings />}
         </div>
-      </div>
+      
       </div>
       <ToastContainer />
     </div>
