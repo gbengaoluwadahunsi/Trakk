@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaUsers} from "react-icons/fa";
 
 interface TeamMember {
   name: string;
@@ -11,8 +12,15 @@ interface TeamOverviewProps {
 
 const TeamOverview: React.FC<TeamOverviewProps> = ({ team }) => {
   return (
-    <div>
-      <h2 className="text-xl text-blue-800 font-bold mb-2">Team Members</h2>
+    <div className='flex'>
+   <div className='relative h-[10em] w-2 bg-[#0006df] rounded-l-md '>
+        <div className='absolute '></div>
+      </div>
+
+      <div className='p-6  w-full'>
+    <h2 className="text-xl font-bold mb-4 flex items-center">
+            <FaUsers className="mr-2" /> Team Overview
+          </h2>
       <ul>
         {team.map((member, index) => (
           <li key={index} className="mb-2 p-2 border rounded">
@@ -21,6 +29,7 @@ const TeamOverview: React.FC<TeamOverviewProps> = ({ team }) => {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };

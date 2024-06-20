@@ -1,5 +1,6 @@
-// src/components/Recommendations.tsx
+
 import React from 'react';
+import { FaTasks} from "react-icons/fa";
 
 interface Recommendation{
   title : string;
@@ -13,19 +14,27 @@ interface RecommendationProps{
 
 const Recommendations: React.FC<RecommendationProps> = ({ recommendations }) => {
   return (
-    <div>
-      <h2 className="text-xl text-blue-800 font-bold mb-2">Recommended for You</h2>
+    <div className='flex'>
+      <div className='relative h-[10em] w-2 bg-[#0006df] rounded-l-md '>
+        <div className='absolute '></div>
+      </div>
+
+      <div className='p-6  w-full'>
+      <h2 className=" flex items-center text-xl font-bold mb-2">
+            <FaTasks className="mr-2" /> Recommendations
+          </h2>
       <ul>
         {recommendations.map((rec, index) => (
           <li key={index} className="mb-2 p-2 border rounded">
             <h3 className="font-bold">{rec.title}</h3>
             <p>{rec.description}</p>
-            <a href={rec.link} target="_blank" className="text-blue-500 underline">
+            <a href={rec.link} target="_blank" className="text-[#00047a] underline">
               Learn more
             </a>
           </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 };

@@ -1,20 +1,16 @@
-
 "use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-;
 import Image from "next/image";
 import loginImage from "../../../../public/signUp.jpg";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
 const EmployeeSignupPage = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors }, watch } = useForm();
   const [companyName, setCompanyName] = useState("");
   const [staffCode, setStaffCode] = useState("");
   const router = useRouter();
@@ -35,13 +31,11 @@ const EmployeeSignupPage = () => {
     try {
       const response = await axios.post("/api/verify-staff-company", { companyName });
       return response.data.valid;
-      
     } catch (error) {
       console.log("Error verifying company.");
       return false;
     }
   };
-
 
   const onSubmit = async (data:any) => {
     const isStaffCodeValid = await verifyStaffCode(data.staffCode);
@@ -66,12 +60,14 @@ const EmployeeSignupPage = () => {
       setTimeout(() => {
         router.push("/employee/login");
       }, 1000);
-     
     } catch (error) {
       notifyError("Sign up failed, please try again.");
       console.error("Sign up failed:", error);
     }
   };
+
+  // Watch the password field to compare it with the confirm password
+  const password = watch("password");
 
   return (
     <section className="md:flex flex-row h-screen">
@@ -85,11 +81,9 @@ const EmployeeSignupPage = () => {
           className="hidden lg:block absolute shadow-lg shadow-stone-700"
         />
       </div>
-      <div className=" flex flex-1 items-center justify-center bg-slate-800">
-        <div className="bg-white px-12 py-6 rounded shadow-md w-[32rem] h-[44rem]">
-          <span
-            className={`text-2xl md:text-4xl flex justify-center items-center py-8 font-mono font-extrabold  text-zinc-800`}
-          >
+      <div className="flex flex-1 items-center justify-center bg-slate-800">
+        <div className="bg-white px-12 py-6 rounded shadow-md w-[32rem] h-[48rem]">
+          <span className="text-2xl md:text-4xl flex justify-center items-center py-8 font-mono font-extrabold text-zinc-800">
             Trakk
           </span>
           <h1 className="text-2xl font-bold">Employee Sign Up</h1>
@@ -115,6 +109,16 @@ const EmployeeSignupPage = () => {
               className="w-full p-2 border border-gray-500 rounded"
             />
             {errors.password && <span className="text-red-500">Password is required</span>}
+            <input
+              {...register("confirmPassword", {
+                required: true,
+                validate: (value) => value === password || "Passwords do not match",
+              })}
+              type="password"
+              placeholder="Confirm Password"
+              className="w-full p-2 border border-gray-500 rounded"
+            />
+            {errors.confirmPassword && <span className="text-red-500">Password doesn&apos;t match</span>}
             <input
               {...register("companyName", { required: true })}
               type="text"
@@ -148,4 +152,3 @@ const EmployeeSignupPage = () => {
 };
 
 export default EmployeeSignupPage;
-

@@ -74,6 +74,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 }
 
@@ -84,4 +87,9 @@
   font-style: normal;
 }
 
+.backgroundImage{
+ background-image: url(/bg2.webp);
+ background-size: cover;
+ background-repeat: no-repeat;
+}
 
