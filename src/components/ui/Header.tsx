@@ -3,13 +3,14 @@ import Image from "next/image";
 import { FaSun, FaMoon } from "react-icons/fa";
 import  logo from "../../../public/logo.png"
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button"
 
 const Header = () => {
   const [toggleMode, setToggleMode] = useState(false);
 
   return (
     <nav className="flex justify-between py-2 items-center border-b  px-8 xl:px-12 ">
-      <span className="flex  gap-2">  
+      <span className="grid grid-cols-4 items-center ">  
         <Image
           src={logo}
           alt="Login page image"
@@ -17,7 +18,7 @@ const Header = () => {
           width={20}
           height={8}
           
-        /><span className="text-[2em] font-serif font-bold ">Trakk</span></span>
+        /><span className="text-[2em]  -ml-2  col-span-3  font-bold ">Trakk</span></span>
 
       <div className="flex  basis-[44%] text-base font-medium justify-between items-center">
       <ul className="  flex justify-between gap-12  cursor-pointer list-none">
@@ -25,8 +26,8 @@ const Header = () => {
         <li>Pricing</li>
         <li>Resources</li>
       </ul>
-      <span>Login</span>
-      <span>Start free trial</span>
+      <Button className="rounded bg-[#1A7DE5] hover:bg-[#5a95d4] ">Login</Button>
+      <Button className=" rounded text-black bg-[#F0F2F5] hover:bg-[#b4bcc7]">Start free trial</Button>
       <span
         className=" bg-slate-800 md:hover:bg-slate-600 cursor-pointer rounded-full p-2 "
         onClick={() => setToggleMode(!toggleMode)}

@@ -93,3 +93,23 @@
  background-repeat: no-repeat;
 }
 
+
+li:hover, .li:hover{
+  color: #6a5acd;
+  cursor: pointer;
+}
+
+
+.testimonial-card{
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.testimonial-card:hover {
+  background-color: #0056b3;
+}
