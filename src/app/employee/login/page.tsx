@@ -67,7 +67,6 @@ const LoginPage = () => {
           src={loginImage}
           alt="Login page image"
           layout="fill"
-          objectFit="cover"
           placeholder="blur"
           className="hidden lg:block absolute shadow-lg shadow-stone-700"
         />

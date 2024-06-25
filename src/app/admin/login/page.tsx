@@ -47,7 +47,6 @@ const AdminLoginPage = () => {
           <Image
             src={logo}
             alt="Login page image"
-            objectFit="cover"
             width={180}
             height={50}
 

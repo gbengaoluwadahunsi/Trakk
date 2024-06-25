@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
-import loginImage from "../../../../public/signUp.jpg";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -72,14 +71,6 @@ const EmployeeSignupPage = () => {
   return (
     <section className="md:flex flex-row h-screen">
       <div className="basis-1/3 relative">
-        <Image
-          src={loginImage}
-          alt="Signup page image"
-          layout="fill"
-          objectFit="cover"
-          placeholder="blur"
-          className="hidden lg:block absolute shadow-lg shadow-stone-700"
-        />
       </div>
       <div className="flex flex-1 items-center justify-center bg-slate-800">
         <div className="bg-white px-12 py-6 rounded shadow-md w-[32rem] h-[48rem]">

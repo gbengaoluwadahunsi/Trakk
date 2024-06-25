@@ -1,6 +1,5 @@
 import { FC, useState } from "react";
 import Image from "next/image";
-import logo from "../../../../public/Trakk.png";
 import { RxDashboard } from "react-icons/rx";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { SiGoogletasks } from "react-icons/si"
@@ -20,13 +19,7 @@ const AdminSidebar: FC<AdminSidebarProps> = ({ setSection }) => {
 
   return (
     <div className="w-64 bg-[#dcdeff] fixed  text-white h-screen  p-4">
-      <Image
-        src={logo}
-        alt="Login page image"
-        objectFit="cover"
-        width={180}
-        height={50}
-      />
+    
       <nav className="sidebar">
         <ul className="space-y-8 mt-8 text-lg">
           {["overview", "employees", "tasks", "company", "reports", "notifications", "settings"].map((item, index) => (

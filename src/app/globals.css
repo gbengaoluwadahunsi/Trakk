@@ -87,21 +87,14 @@
   font-style: normal;
 }
 
-.backgroundImage{
- background-image: url(/bg2.webp);
- background-size: cover;
- background-repeat: no-repeat;
-}
 
-
-li:hover, .li:hover{
+  nav li:hover, .li:hover ,.footer li:hover{
   color: #6a5acd;
   cursor: pointer;
 }
 
 
 .testimonial-card{
-  background-color: #007bff;
   color: white;
   border: none;
   padding: 10px;
@@ -110,6 +103,3 @@ li:hover, .li:hover{
   border-radius: 4px;
 }
 
-.testimonial-card:hover {
-  background-color: #0056b3;
-}

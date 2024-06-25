@@ -31,7 +31,7 @@ const AdminSignupPage = () => {
   const adminPassword = watch("adminPassword");
 
   return (
-    <div className="flex items-center justify-center bg-center bg-cover bg-no-repeat bg-admin2 h-screen">
+    <div className="flex items-center justify-center bg-center bg-cover bg-no-repeat h-screen">
       <div className="bg-white p-12 rounded shadow-md w-[32rem] h-[40rem]">
         <span
           className="text-2xl md:text-4xl flex justify-center items-center py-8 font-mono font-extrabold text-zinc-800"

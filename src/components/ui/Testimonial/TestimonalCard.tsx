@@ -48,7 +48,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           <FaStar className="text-slate-800" />
         </div>
         <p className=" mt-2 text-[#495765]">{description}</p>
-        <button  className= "testimonial-card" onClick={handlePlayAudio}>🔊 Listen</button>
+        <button  className= "testimonial-card bg-[#1A7DE5] hover:bg-[#5a95d4]" onClick={handlePlayAudio}>🔊 Listen</button>
       </div>
     </div>
   );
