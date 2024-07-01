@@ -66,6 +66,7 @@ let aje = minute <= 9 ? `0${minute}` : minute
         <h2 className=" font-bold">{ daylist[displayDate.getDay()]  + ", "+ " June "  +  displayDate.getDate() }</h2>
         <span className="  text-[#c9c9db] ">{"Current Time: " + hour + ":"+  aje + " " + timeoFTheDay}</span>
         </div>
+        <span> Trial days left : 14 </span>
         <button onClick={handleLogOut} className="bg-red-500 px-4 py-2 rounded">Logout</button>
       </header>
     );

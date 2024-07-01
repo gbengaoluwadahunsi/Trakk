@@ -12,7 +12,7 @@ interface PricingCardProps {
 
 const PricingCard: React.FC<PricingCardProps> = ({ name, price,features }) => {
   return (
-    <div className=" flex flex-col gap-4 border-2 border-slate-200  h-[28rem] rounded-lg p-10">
+    <div className=" flex flex-col gap-4 border-2 border-slate-400  h-[28rem] rounded-lg p-10 cursor-pointer hover:scale-y-110 hover:border-blue-800">
         <span className="font-bold text-slate-900 text-lg ">{name}</span>
         <h4 className="font-bold"><span className="font-bold text-slate-900 text-5xl">${price}</span>/user/month</h4>
         <Button className="w-full bg-slate-200 text-black  hover:text-white">Select</Button>

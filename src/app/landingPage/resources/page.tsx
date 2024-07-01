@@ -1,8 +1,10 @@
-
+import Resources from "@/components/ui/resourcespage/Resources"
 
 const page = () => {
   return (
-    <div className="min-h-screen">Kemi</div>
+    <div className="min-h-screen">
+      <Resources/>
+    </div>
   )
 }
 

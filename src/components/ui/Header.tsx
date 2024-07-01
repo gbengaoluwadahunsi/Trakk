@@ -7,6 +7,7 @@ import { FaSun, FaMoon } from "react-icons/fa";
 import  logo from "../../../public/logo.png"
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button"
+import { useRouter } from "next/navigation";
 
 
 const links = [
@@ -22,6 +23,19 @@ const links = [
 const Header = () => {
  const pathname =  usePathname()
   const [toggleMode, setToggleMode] = useState(false);
+  const router = useRouter()
+
+  // useEffect(() => {
+  //   if (localStorage.getItem("theme") === "dark") {
+  //     setToggleMode(true);
+  //   } else {
+  //     setToggleMode(false);
+  //   }
+  // }, [])
+
+  const handleStartTrial = () => {
+    router.push('/startTrial')
+  }
 
   return (
     <nav className="flex justify-between py-2 bg-white items-center border-b  px-8 xl:px-12 ">
@@ -52,7 +66,7 @@ const Header = () => {
         }
    
       <Button className="rounded bg-[#1A7DE5] hover:bg-[#5a95d4] ">Login</Button>
-      <Button className=" rounded text-black bg-[#F0F2F5] hover:bg-[#b4bcc7]">Start free trial</Button>
+      <Button className=" rounded text-black bg-[#F0F2F5] hover:bg-[#b4bcc7]" onClick={handleStartTrial}>Start free trial</Button>
       <span
         className=" bg-slate-800 md:hover:bg-slate-600 cursor-pointer rounded-full p-2 "
         onClick={() => setToggleMode(!toggleMode)}
